@@ -1,0 +1,7 @@
+pandas
+numpy
+datetime
+streamlit-aggrid
+streamlit
+plotly
+pivottablejs 
