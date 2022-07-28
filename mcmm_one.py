@@ -16,6 +16,8 @@ master_file = st.file_uploader("Upload the master file (xlsx)")
 
 tdb_file = st.file_uploader("Upload the blotter file (xlsx)")
 
+st.write("wait ah")
+
 if master_file is not None and tdb_file is not None:
     
     master = pd.read_excel(master_file, engine='openpyxl')
