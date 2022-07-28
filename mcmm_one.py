@@ -50,8 +50,8 @@ if master_file is not None and tdb_file is not None:
         
         Trader_DB = pd.merge(Trader_DB, pl, on='Trade Name', how='left')
         
-#         Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:7]), value_vars =list(Trader_DB.columns[7:]),
-#                             var_name= "Dates" , value_name= "PL")
+        Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:7]), value_vars =list(Trader_DB.columns[7:]),
+                            var_name= "Dates" , value_name= "PL")
         
 #         Trader_DB = Trader_DB[(Trader_DB[['weights']] != 0).all(axis=1)]
 #         Trader_DB["Daily-pl"] = Trader_DB["weights"]*Trader_DB["PL"]
