@@ -21,7 +21,8 @@ if master_file is not None and tdb_file is not None:
     master = pd.read_excel(master_file, engine='openpyxl')
     
     tdb = pd.read_excel(tdb_file, engine='openpyxl')
-
+    
+    st.dataframe(master.head(50))
     # @st.cache(ttl=24*60*60, persist = True)
     @st.experimental_memo(suppress_st_warning=True)
     def get_database(master, tdb):
