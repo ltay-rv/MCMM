@@ -24,7 +24,8 @@ if master_file is not None and tdb_file is not None:
     
     tdb = pd.read_excel(tdb_file, engine='openpyxl')
     
-    @st.experimental_memo(suppress_st_warning=True)
+    @st.cache(ttl=24*3600)
+    #@st.experimental_memo(suppress_st_warning=True)
     def get_database(master, tdb):
         
         tdb["RMDS"] = tdb["DS"] + tdb["RM"]
