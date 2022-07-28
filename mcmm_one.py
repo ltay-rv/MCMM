@@ -45,17 +45,17 @@ if master_file is not None and tdb_file is not None:
         pl = master.iloc[:,5:idt+1]
         
         Trader_DB = pd.concat([Trader_DB, trader_names/100], axis = 1)
-        Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:5]), value_vars =list(Trader_DB.columns[5:]),
-                            var_name= "Trader" , value_name= "weights")
+#         Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:5]), value_vars =list(Trader_DB.columns[5:]),
+#                             var_name= "Trader" , value_name= "weights")
         
-        Trader_DB = pd.merge(Trader_DB, pl, on='Trade Name', how='left')
+#         Trader_DB = pd.merge(Trader_DB, pl, on='Trade Name', how='left')
         
-        Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:7]), value_vars =list(Trader_DB.columns[7:]),
-                            var_name= "Dates" , value_name= "PL")
+#         Trader_DB = pd.melt(Trader_DB, id_vars =list(Trader_DB.columns[:7]), value_vars =list(Trader_DB.columns[7:]),
+#                             var_name= "Dates" , value_name= "PL")
         
-        Trader_DB = Trader_DB[(Trader_DB[['weights']] != 0).all(axis=1)]
-        Trader_DB["Daily-pl"] = Trader_DB["weights"]*Trader_DB["PL"]
-        Trader_DB.drop(['weights', 'PL'], axis=1, inplace = True)
+#         Trader_DB = Trader_DB[(Trader_DB[['weights']] != 0).all(axis=1)]
+#         Trader_DB["Daily-pl"] = Trader_DB["weights"]*Trader_DB["PL"]
+#         Trader_DB.drop(['weights', 'PL'], axis=1, inplace = True)
         
 #         Rates = ["DS", "RM", "SP", "HW", "RMDS", "RMDSSPHW"]
 #         FX = ["SK", "YZ", "HC", "SW"]
