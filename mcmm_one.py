@@ -34,9 +34,9 @@ if master_file is not None and tdb_file is not None:
         tdb.loc[tdb["Asset Class"] == "Rates", "Firm-Rates"] = 100
         tdb["Firm-Rates"].fillna(0, inplace = True)
 
-#         master = pd.merge(master, tdb, on='Trade Name', how='inner')
-#         Trader_DB = master[["Trade Name", "Theme_y", "Asset Class_y", "Trade Category", "RiskCountry_y"]].copy()
-#         Trader_DB.rename(columns = {"Theme_y": "Theme", "Asset Class_y": "Asset Class", "RiskCountry_y": "RiskCountry"}, inplace =True)
+        master = pd.merge(master, tdb, on='Trade Name', how='inner')
+        Trader_DB = master[["Trade Name", "Theme_y", "Asset Class_y", "Trade Category", "RiskCountry_y"]].copy()
+        Trader_DB.rename(columns = {"Theme_y": "Theme", "Asset Class_y": "Asset Class", "RiskCountry_y": "RiskCountry"}, inplace =True)
         
 #         trader_start_name = master.columns.get_loc("DS") 
 #         trader_names = master.iloc[:,trader_start_name:]
@@ -69,10 +69,10 @@ if master_file is not None and tdb_file is not None:
         
 #         Trader_DB.sort_values(by=['Desk'], inplace = True)
         
-        return tdb
+        return Trader_DB
         
-    tdb = get_database(master, tdb)
-    st.dataframe(tdb.head(50))
+    Trader_DB = get_database(master, tdb)
+    st.dataframe(Trader_DB.head(50))
     
     # ---- HIDE STREAMLIT STYLE ----
     hide_st_style = """
