@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from xbbg import blp
 from datetime import datetime
 from datetime import timedelta
 from st_aggrid import AgGrid
@@ -16,16 +17,13 @@ master_file = st.file_uploader("Upload the master file (xlsx)")
 
 tdb_file = st.file_uploader("Upload the blotter file (xlsx)")
 
-st.write("wait ah")
-
 if master_file is not None and tdb_file is not None:
     
     master = pd.read_excel(master_file, engine='openpyxl')
     
     tdb = pd.read_excel(tdb_file, engine='openpyxl')
     
-    @st.cache(ttl=24*3600)
-    #@st.experimental_memo(suppress_st_warning=True)
+    @st.experimental_memo(suppress_st_warning=True)
     def get_database(master, tdb):
         
         tdb["RMDS"] = tdb["DS"] + tdb["RM"]
