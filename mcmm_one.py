@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-from xbbg import blp
 from datetime import datetime
 from datetime import timedelta
 from st_aggrid import AgGrid
