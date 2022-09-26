@@ -5,8 +5,6 @@ streamlit
 plotly
 pivottablejs 
 openpyxl
-
-annotated_text 
 re 
 functools
 time
