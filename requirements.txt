@@ -1,8 +1,14 @@
 pandas
 numpy
 datetime
-streamlit-aggrid
 streamlit
 plotly
 pivottablejs 
 openpyxl
+
+annotated_text 
+re 
+functools
+time
+shutil
+glob
